@@ -1,7 +1,7 @@
 let app = new Vue({
   el: "#app",
   data: {
-    new_item: "",
+    newItem: "",
     todos: ["todo 1", "todo 2", "todo 3"]
   },
   methods: {
@@ -10,8 +10,9 @@ let app = new Vue({
       this.newItem = "";
     },
     deleteItem: function(index) {
-      this.todos.splice(index, 1);
-      this.newItem = "";
+      if (confirm("消す？ 消しちゃう？")) {
+        this.todos.splice(index, 1);
+      }
     }
   }
 });

@@ -18,6 +18,12 @@ body {
   line-height: 1.5;
 }
 
-#app input[type="text"]{
+#app input[type="text"] {
   padding: 2px;
+}
+
+.command {
+  font-size: 12px;
+  corsor: pointer;
+  color: aqua;
 }
