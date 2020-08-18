@@ -13,8 +13,8 @@
       <ul>
         <li v-for="todo in todos">{{ todo }}</li>
       </ul>
-      <form>
-        <input type="text" />
+      <form v-on:submit="addItem">
+        <input type="text" v-model="new_items" />
         <input type="submit" value="Add" />
       </form>
     </div>
