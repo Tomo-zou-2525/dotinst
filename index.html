@@ -9,14 +9,23 @@
   </head>
   <body>
     <div id="app" class="container">
-      <h1>My Todos</h1>
+      <h1>
+        My Todos
+        <span class="info">
+          {{ r }}/{{ todos.length }}
+        </span>
+      </h1>
       <ul>
         <li v-for="(todo, index) in todos">
-          {{ todo }}
+          <input type="checkbox" v-model="todo.isDone" />
+          <!-- <span v-bind:class="{done: todo.isDone}"></span> -->
+          <span :class="{done: todo.isDone}">
+            {{ todo.title }}
+          </span>
           <span @click="deleteItem(index)" class="command">[x]</span>
         </li>
+        <li v-show="!todos.length">!!!</li>
       </ul>
-
       <form v-on:submit.prevent="addItem">
         <input type="text" v-model="newItem" />
         <input type="submit" value="Add" />
