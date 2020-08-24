@@ -20,14 +20,23 @@ let app = new Vue({
       if (confirm("消す？ 消しちゃう？")) {
         this.todos.splice(index, 1);
       }
+    },
+    allDelete: function(index) {
+      if (!confirm("終わったやつ全部消す？ うほほ消しちゃう？")) {
+        return;
+      }
+      this.todos = this.r;
     }
   },
   computed: {
     r: function() {
-      let items = this.todos.filter(function(todo) {
+      return this.todos.filter(function(todo) {
         return !todo.isDone;
       });
-      return items.length;
+      // let items = this.todos.filter(function(todo) {
+      //   return !todo.isDone;
+      // });
+      // return items.length;
     }
   }
 });

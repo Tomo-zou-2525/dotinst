@@ -10,9 +10,12 @@
   <body>
     <div id="app" class="container">
       <h1>
+        <button @click="allDelete">
+          全件削除
+        </button>
         My Todos
         <span class="info">
-          {{ r }}/{{ todos.length }}
+          ({{ r.length }}/{{ todos.length }})
         </span>
       </h1>
       <ul>
